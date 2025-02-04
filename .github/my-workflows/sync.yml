@@ -20,7 +20,8 @@ jobs:
           git config --global user.name "GitHub Actions"
 
       - name: Debug - Print upstream URL
-        run: echo "Upstream URL: ${{ github.event.repository.parent.clone_url }}"
+        run: |
+          echo "Upstream URL: ${{ github.event.repository.parent.clone_url }}"
 
       - name: Sync with upstream repository
         run: |
