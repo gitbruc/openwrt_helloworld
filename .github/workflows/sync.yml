@@ -23,5 +23,5 @@ jobs:
         run: |
           git remote add upstream https://github.com/sbwml/openwrt_helloworld.git
           git fetch upstream
-          git merge upstream/${{ github.event.repository.parent.default_branch }}
+          git merge upstream/v5
           git push
