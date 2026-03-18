@@ -367,6 +367,30 @@ msgstr "分流"
 msgid "Balancing"
 msgstr "负载均衡"
 
+msgid "Node Addition Method"
+msgstr "节点添加方式"
+
+msgid "Manual"
+msgstr "手动"
+
+msgid "Batch"
+msgstr "批量"
+
+msgid "Select Group"
+msgstr "选择分组"
+
+msgid "Node Matching Rules"
+msgstr "节点匹配规则"
+
+msgid ""
+"Example: <code>^A && B && !C && D$</code><br>"
+"This means the node remark must start with A (^), include B, exclude C (!), and end with D ($).<br>"
+"Conditions are joined by <code>&&</code>, and their order does not affect the result."
+msgstr ""
+"示例：<code>^A && B && !C && D$</code><br>"
+"表示节点备注需同时满足：以 A 开头（^）、包含 B、不包含 C（!）、并以 D 结尾（$）。<br>"
+"多个条件使用 <code>&&</code> 连接，条件顺序不影响结果。"
+
 msgid "Balancing Strategy"
 msgstr "负载均衡策略"
 
@@ -412,8 +436,11 @@ msgstr "前置代理"
 msgid "Preproxy Node"
 msgstr "前置代理节点"
 
-msgid "Set the node to be used as a pre-proxy. Each rule (including <code>Default</code>) has a separate switch that controls whether this rule uses the pre-proxy or not."
-msgstr "设置用作前置代理的节点。每条规则（包括<code>默认</code>）都有独立开关控制本规则是否使用前置代理。"
+msgid "Set the node to be used as a pre-proxy."
+msgstr "设置用作前置代理的节点。"
+
+msgid "Each rule has a separate switch that controls whether this rule uses the pre-proxy or not."
+msgstr "每条规则都有独立开关控制本规则是否使用前置代理。"
 
 msgid "Close (Not use)"
 msgstr "关闭 (不使用)"
@@ -426,12 +453,6 @@ msgstr "直连"
 
 msgid "Blackhole (Block)"
 msgstr "黑洞（屏蔽）"
-
-msgid "Use preproxy node"
-msgstr "使用前置代理节点"
-
-msgid "Default Preproxy"
-msgstr "默认前置代理"
 
 msgid "There are no available nodes, please add or subscribe nodes first."
 msgstr "没有可用节点，请先添加或订阅节点。"
@@ -748,18 +769,6 @@ msgstr "恢复切换"
 msgid "When detects main node is available, switch back to the main node."
 msgstr "当检测到主节点可用时，切换回主节点。"
 
-msgid "If the main node is shunt"
-msgstr "如果主节点是分流"
-
-msgid "Switch it"
-msgstr "切掉它"
-
-msgid "Applying to the default node"
-msgstr "应用于默认节点"
-
-msgid "Applying to the default preproxy node"
-msgstr "应用于默认前置节点"
-
 msgid "Add nodes to the standby node list by keywords"
 msgstr "通过关键字添加节点到备用节点列表"
 
@@ -1012,6 +1021,12 @@ msgstr "订阅网址不能为空。"
 msgid "Subscribe via proxy"
 msgstr "通过代理订阅"
 
+msgid "Update Once on Boot"
+msgstr "开机更新一次"
+
+msgid "Updates the subscription the first time runs automatically after each system boot."
+msgstr "路由每次启动后，首次自动运行时更新订阅。"
+
 msgid "Enable auto update subscribe"
 msgstr "开启自动更新订阅"
 
@@ -1239,9 +1254,6 @@ msgstr "插件名称"
 
 msgid "Plugin Arguments"
 msgstr "插件参数"
-
-msgid "Naiveproxy Protocol"
-msgstr "Naiveproxy协议"
 
 msgid "User Level"
 msgstr "用户等级(level)"
@@ -1603,9 +1615,6 @@ msgstr "覆盖连接目标地址"
 msgid "Override the connection destination address with the sniffed domain.<br />Otherwise use sniffed domain for routing only.<br />If using shunt nodes, configure the domain shunt rules correctly."
 msgstr "用探测出的域名覆盖连接目标地址。<br />否则仅将探测得到的域名用于路由。<br />如使用分流节点，请正确设置域名分流规则。"
 
-msgid "Override the connection destination address with the sniffed domain.<br />When enabled, traffic will match only by domain, ignoring IP rules.<br />If using shunt nodes, configure the domain shunt rules correctly."
-msgstr "用探测出的域名覆盖连接目标地址。<br />启用后仅使用域名进行流量匹配，将忽略IP规则。<br />如使用分流节点，请正确设置域名分流规则。"
-
 msgid "Handshake Server"
 msgstr "握手服务器"
 
@@ -1636,12 +1645,6 @@ msgstr "ECH 配置"
 msgid "ECH Key"
 msgstr "ECH 密钥"
 
-msgid "PQ signature schemes"
-msgstr "后量子对等证书签名方案"
-
-msgid "Disable adaptive sizing of TLS records"
-msgstr "禁用 TLS 记录的自适应大小调整"
-
 msgid "ECH Query Policy"
 msgstr "ECH 查询策略"
 
@@ -1650,6 +1653,9 @@ msgstr "控制使用 DNS 查询 ECH 配置时的策略。"
 
 msgid "Enable Multipath TCP, need to be enabled in both server and client configuration."
 msgstr "启用 Multipath TCP，需在服务端和客户端配置中同时启用。"
+
+msgid "An FinalMaskObject in JSON format, used for sharing."
+msgstr "JSON 格式的 FinalMaskObject，用来实现分享。"
 
 msgid "Fragment"
 msgstr "分片"
