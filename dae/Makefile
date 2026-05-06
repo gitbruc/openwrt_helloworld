@@ -21,6 +21,8 @@ PKG_BUILD_DEPENDS:=golang/host bpf-headers
 PKG_BUILD_PARALLEL:=1
 PKG_BUILD_FLAGS:=no-mips16
 
+PATCH_DIR:=patches
+
 ifeq ($(ARCH),arm)
 PATCH_DIR:=patches_arm
 else ifeq ($(ARCH),mips)
@@ -94,6 +96,13 @@ endef
 define Package/dae/conffiles
 /etc/dae/config.dae
 /etc/config/dae
+endef
+
+define Build/Patch
+	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR),)
+ifneq ($(PATCH_DIR_ARCH),)
+	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR_ARCH),)
+endif
 endef
 
 DAE_CFLAGS:= \
